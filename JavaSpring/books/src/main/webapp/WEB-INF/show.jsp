@@ -5,10 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Books</title>
+<title>One Book</title>
 </head>
 <body>
 	<h1>TEST!!!</h1>
 	<p><c:out value="${book.title}"/></p>
+	<p><c:out value="${book.description}"/></p>
 </body>
 </html>
