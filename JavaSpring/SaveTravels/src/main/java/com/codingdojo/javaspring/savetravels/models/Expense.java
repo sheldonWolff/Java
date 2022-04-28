@@ -24,16 +24,16 @@ public class Expense {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    @Size(min = 3, max = 200)
+    @Size(min = 3, max = 200, message="Expense Name must be at least 3 characters.")
     private String expenseName;
     @NotNull
-    @Size(min = 5, max = 200)
+    @Size(min = 5, max = 200, message="Description must be at least 5 characters.")
     private String description;
     @NotNull
-    @Size(min = 3, max = 40)
+    @Size(min = 3, max = 40, message="Vendor name must be at least 3 characters.")
     private String vendor;
     @NotNull
-    @Min(1)
+    @Min(value=2, message="Must be at least 2 dollars.")
     private Integer amount;
     // This will not allow the createdAt column to be updated after creation
     @Column(updatable=false)

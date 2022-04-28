@@ -1,38 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page isErrorPage="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Expenses</title>
+<title>Edit</title>
 </head>
 <body>
-	<table>
-		<thead>
-			<tr>
-				<th>Expense</th>
-				<th>Vendor</th>
-				<th>Amount</th>
-				<th>Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="oneExpense" items="${expenses}">
-				<tr>
-					<td><c:out value="${oneExpense.expenseName}"/></td>
-					<td><c:out value="${oneExpense.vendor}"/></td>
-					<td><c:out value="${oneExpense.amount}"/></td>
-					<td><a href="/expense/${oneExpense.id}/edit">Edit</a></td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	
-	<h1>New Expense</h1>
-	<form:form action="/expense" method="post" modelAttribute="expense">
+	<h1>Edit Expense</h1>
+	<form:form action="/expense/${expense.id}" method="post" modelAttribute="expense">
+		<input type="hidden" name="_method" value="put">
 	    <p>
 	        <form:label path="expenseName">Expense Name</form:label>
 	        <form:errors path="expenseName"/>

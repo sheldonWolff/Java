@@ -20,12 +20,15 @@ public class ExpenseService {
     public Expense createExpense(Expense b) {
         return expenseRepository.save(b);
     }
-    public Expense findBook(Long id) {
+    public Expense findExpense(Long id) {
         Optional<Expense> optionalExpense = expenseRepository.findById(id);
         if(optionalExpense.isPresent()) {
             return optionalExpense.get();
         } else {
             return null;
         }
+    }
+    public Expense updateExpense(Expense b) {
+    	return expenseRepository.save(b);
     }
 }
