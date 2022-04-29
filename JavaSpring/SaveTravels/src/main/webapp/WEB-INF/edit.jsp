@@ -11,6 +11,7 @@
 </head>
 <body>
 	<h1>Edit Expense</h1>
+	<a href="/">Go Back</a>
 	<form:form action="/expense/${expense.id}" method="post" modelAttribute="expense">
 		<input type="hidden" name="_method" value="put">
 	    <p>
