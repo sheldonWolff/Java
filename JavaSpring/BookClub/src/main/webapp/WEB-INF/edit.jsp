@@ -32,5 +32,9 @@
 			<form:input type="hidden" path="id" value="${book.id}"/>
 			<input type="submit" value="Submit"/>
 		</form:form>
+		<form:form action="/book/${book.id}/delete" method="post">
+						<input type="hidden" name="_method" value="delete">
+						<input type="submit" value="Delete" style="background-color: red">
+		</form:form>
 </body>
 </html>
